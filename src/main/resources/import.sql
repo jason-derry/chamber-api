@@ -8,7 +8,7 @@ INSERT INTO WEAPON (name, type, ammo) VALUES ('L85A1', 'Assault', '5.56mm')
 
 INSERT INTO WEAPON (name, type, ammo) VALUES ('Colt M1911', 'Handgun', '.45 ACP')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('Desert Eagle', 'Handgun', '.44 Magnum')
-INSERT INTO WEAPON (name, type, ammo) VALUES ('Luger pistol', 'Handgun', 9mm')
+INSERT INTO WEAPON (name, type, ammo) VALUES ('Luger pistol', 'Handgun', '9mm')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('Glock 19', 'Handgun', '9mm')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('Colt Anaconda', 'Handgun', '.44 Magnum')
 
