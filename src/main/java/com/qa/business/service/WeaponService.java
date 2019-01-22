@@ -4,4 +4,6 @@ public interface WeaponService {
 	
 	String getWeapons();
 
+	String getWeapons(String type);
+
 }

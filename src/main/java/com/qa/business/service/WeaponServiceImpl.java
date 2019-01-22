@@ -14,6 +14,11 @@ public class WeaponServiceImpl implements WeaponService {
 		return repo.getWeapons();		
 	}
 	
+	@Override
+	public String getWeapons(String type) {
+		return repo.getWeapons(type);
+	}
+	
 	public void setRepo(WeaponRepository repo) {
 		this.repo = repo;
 	}

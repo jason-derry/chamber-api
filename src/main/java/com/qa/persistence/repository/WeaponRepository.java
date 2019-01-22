@@ -2,6 +2,8 @@ package com.qa.persistence.repository;
 
 public interface WeaponRepository {
 	
-	public String getWeapons();
+	String getWeapons();
+
+	String getWeapons(String type);
 
 }
