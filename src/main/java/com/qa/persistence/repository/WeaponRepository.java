@@ -4,4 +4,6 @@ public interface WeaponRepository {
 	
 	String getWeapons();
 
+	String getWeapons(String type);
+
 }
