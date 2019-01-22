@@ -33,3 +33,6 @@ INSERT INTO WEAPON (name, type, ammo) VALUES ('MAC-10', 'SMG', '.45 ACP')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('Tommy Gun', 'SMG', '.45 ACP')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('Uzi', 'SMG', '9mm')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('L2A3', 'SMG', '9mm')
+
+
+INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
