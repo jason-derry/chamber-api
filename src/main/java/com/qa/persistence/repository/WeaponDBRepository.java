@@ -20,8 +20,9 @@ public class WeaponDBRepository implements WeaponRepository {
 	@Inject
 	private JSONUtil util;
 
+	@Override
 	public String getWeapons() {
-		Query query = manager.createQuery("Select c FROM Weapon c");
+		Query query = manager.createQuery("Select w FROM Weapon w");
 		Collection<Weapon> result = (Collection<Weapon>) query.getResultList();
 		return util.getJSONForObject(result);
 	}
