@@ -1,3 +1,7 @@
+INSERT INTO ACCOUNTWEAPON (user_id, weapon_id) VALUES (1, 4)
+
+INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
+
 INSERT INTO WEAPON (name, type, ammo) VALUES ('AKM', 'Assault', '7.62mm')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('FAMAS', 'Assault', '5.56mm')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('FN SCAR', 'Assault', '5.56mm')
@@ -35,4 +39,3 @@ INSERT INTO WEAPON (name, type, ammo) VALUES ('Uzi', 'SMG', '9mm')
 INSERT INTO WEAPON (name, type, ammo) VALUES ('L2A3', 'SMG', '9mm')
 
 
-INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
