@@ -27,6 +27,13 @@ public class ChamberEndpoint {
                 			: wService.getWeapons();
 	}
 	
+	@Path("/weapons/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getWeapon(@QueryParam("id") Long id) {
+		return wService.getWeapon(id);
+	}
+	
 	@Path("/getAllAccounts")
 	@GET
 	@Produces({ "application/json" })

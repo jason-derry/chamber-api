@@ -5,5 +5,7 @@ public interface WeaponRepository {
 	String getWeapons();
 
 	String getWeapons(String type);
+	
+	String getWeapon(Long id);
 
 }
