@@ -52,6 +52,19 @@ public class AccountDBRepository implements AccountRepository {
 		}
 		return "{\"message\": \"account sucessfully deleted\"}";
 	}
+	
+	@Override
+	@Transactional(REQUIRED)
+	public String amendAccount(Long id, String account) {
+		Account accountInDB = findAccount(id);
+		if (accountInDB != null) {
+			Account changes = util.getObjectForJSON(account, Account.class);
+			accountInDB.setUsername(changes.getUsername());
+			accountInDB.setPassword(changes.getPassword());
+			accountInDB.setEmail(changes.getEmail());
+		}
+		return "{\"message\": \"account has been sucessfully amended\"}";
+	}
 
 	private Account findAccount(Long id) {
 		return manager.find(Account.class, id);
@@ -64,5 +77,6 @@ public class AccountDBRepository implements AccountRepository {
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
+
 
 }
