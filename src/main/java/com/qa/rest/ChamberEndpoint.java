@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
@@ -25,6 +26,13 @@ public class ChamberEndpoint {
 	public String getWeapons(@QueryParam("type") String type) {
 		return type != null ? wService.getWeapons(type)
                 			: wService.getWeapons();
+	}
+	
+	@Path("/weapons/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getWeapon(@PathParam("id") Long id) {
+		return wService.getWeapon(id);
 	}
 	
 	@Path("/getAllAccounts")
