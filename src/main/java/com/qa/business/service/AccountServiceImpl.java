@@ -24,8 +24,14 @@ public class AccountServiceImpl implements AccountService {
 	public String deleteAccount(Long id) {
 		return repo.deleteAccount(id);
 	}
+	
+	@Override
+	public String amendAccount(Long id, String account) {
+		return repo.amendAccount(id, account);
+	}
 
 	public void setRepo(AccountRepository repo) {
 		this.repo = repo;
 	}
+
 }
