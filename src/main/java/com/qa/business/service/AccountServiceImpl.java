@@ -11,8 +11,14 @@ public class AccountServiceImpl implements AccountService {
 	@Inject
 	private AccountRepository repo;
 
+	@Override
 	public String getAllAccounts() {
 		return repo.getAllAccounts();
+	}
+	
+	@Override
+	public String getAccount(Long id) {
+		return repo.getAccount(id);
 	}
 
 	@Override

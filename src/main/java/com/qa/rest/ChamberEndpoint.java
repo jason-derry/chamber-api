@@ -43,6 +43,13 @@ public class ChamberEndpoint {
 		return aService.getAllAccounts();
 	}
 	
+	@Path("/getAccount/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getAccount(@PathParam("id") Long id) {
+		return aService.getAccount(id);
+	}
+	
 	@Path("/createAccount")
 	@POST
 	@Produces({ "application/json" })

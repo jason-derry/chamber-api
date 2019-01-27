@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 
 import com.qa.business.service.AccountService;
 import com.qa.persistence.domain.Account;
+import com.qa.persistence.domain.Weapon;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
@@ -34,6 +35,12 @@ public class AccountDBRepository implements AccountRepository {
 		Collection<Account> accounts = (Collection<Account>) query.getResultList();
 		return util.getJSONForObject(accounts);
 	}
+	
+	@Override
+	public String getAccount(Long id) {
+		return util.getJSONForObject(findAccount(id));
+	}
+	
 
 	@Override
 	@Transactional(REQUIRED)
