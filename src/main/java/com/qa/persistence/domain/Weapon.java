@@ -22,6 +22,7 @@ public class Weapon {
 	private Long damage;
 	private Double accMod;
 	private Double critMod;
+	private Long price;
 	
 	public Weapon() {
 	}
@@ -38,6 +39,7 @@ public class Weapon {
 		this.damage = damage;
 		this.accMod = accMod;
 		this.critMod = critMod;
+		this.price = price;
 	}
 
 	public String getName() {
@@ -126,6 +128,14 @@ public class Weapon {
 
 	public void setCritMod(Double critMod) {
 		this.critMod = critMod;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
 	}
 
 	public Long getId() {
