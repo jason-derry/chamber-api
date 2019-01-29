@@ -1,6 +1,7 @@
 package com.qa.rest;
 
 import javax.inject.Inject;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -55,6 +56,13 @@ public class ChamberEndpoint {
 	@Produces({ "application/json" })
 	public String addAccount(String account) {
 		return aService.addAccount(account);
+	}
+	
+	@Path("/deleteAccount/{id}")
+	@DELETE
+	@Produces({ "application/json" })
+	public String deleteAccount(@PathParam("id") Long id) {
+		return aService.deleteAccount(id);
 	}
 	
 	@Path("/amendAccount/{id}")
