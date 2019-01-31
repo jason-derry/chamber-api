@@ -36,3 +36,5 @@ INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, da
 
 
 INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
+
+INSERT INTO ACCOUNTWEAPON (user_id, weapon_id) VALUES (1, 4)

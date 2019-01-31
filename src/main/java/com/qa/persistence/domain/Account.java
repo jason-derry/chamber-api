@@ -1,9 +1,13 @@
 package com.qa.persistence.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Account {
@@ -14,6 +18,13 @@ public class Account {
 	private String username;
 	private String password;
 	private String email;
+	
+	@ManyToMany(mappedBy = "accounts")
+	private Set<Weapon> weapons = new HashSet<>();
+
+	public Set<Weapon> getWeapons() {
+		return weapons;
+	}
 
 	public Account() {
 	}

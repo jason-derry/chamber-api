@@ -1,9 +1,17 @@
 package com.qa.persistence.domain;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Weapon {
@@ -24,10 +32,16 @@ public class Weapon {
 	private Double critMod;
 	private Long price;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "accountweapon",
+			joinColumns = @JoinColumn(name = "weapon_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+	private Set<Account> accounts;
+	
 	public Weapon() {
 	}
 	
-	public Weapon(String name, String type, String ammo, Double weight, Integer magSize, Double reloadSpd, Long rof, Long range, Long damage, Double accMod, Double critMod ) {
+	public Weapon(String name, String type, String ammo, Double weight, Integer magSize, Double reloadSpd, Long rof, Long range, Long damage, Double accMod, Double critMod, Long price, Account... accounts) {
 		this.name = name;
 		this.type = type;
 		this.ammo = ammo;
@@ -40,6 +54,8 @@ public class Weapon {
 		this.accMod = accMod;
 		this.critMod = critMod;
 		this.price = price;
+		this.accounts = Stream.of(accounts).collect(Collectors.toSet());
+		this.accounts.forEach(x -> x.getWeapons().add(this));
 	}
 
 	public String getName() {
