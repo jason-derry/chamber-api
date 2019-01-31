@@ -41,7 +41,7 @@ public class Weapon {
 	public Weapon() {
 	}
 	
-	public Weapon(String name, String type, String ammo, Double weight, Integer magSize, Double reloadSpd, Long rof, Long range, Long damage, Double accMod, Double critMod, Long price, Account... accounts) {
+	public Weapon(String name, String type, String ammo, Double weight, Integer magSize, Double reloadSpd, Long rof, Long range, Long damage, Double accMod, Double critMod, Long price) {
 		this.name = name;
 		this.type = type;
 		this.ammo = ammo;
@@ -54,8 +54,8 @@ public class Weapon {
 		this.accMod = accMod;
 		this.critMod = critMod;
 		this.price = price;
-		this.accounts = Stream.of(accounts).collect(Collectors.toSet());
-		this.accounts.forEach(x -> x.getWeapons().add(this));
+//		this.accounts = Stream.of(accounts).collect(Collectors.toSet());
+//		this.accounts.forEach(x -> x.getWeapons().add(this));
 	}
 
 	public String getName() {
