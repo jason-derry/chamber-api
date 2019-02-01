@@ -81,7 +81,7 @@ public class AccountDBRepository implements AccountRepository {
 				.setParameter(1, user_id)
 				.setParameter(2, weapon_id)
 				.executeUpdate();
-		return null;
+		return "weapon added to account " + user_id;
 	}
 
 	private Account findAccount(Long id) {
