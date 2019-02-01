@@ -72,6 +72,17 @@ public class AccountDBRepository implements AccountRepository {
 		}
 		return "{\"message\": \"account has been sucessfully amended\"}";
 	}
+	
+	@Override
+	@Transactional(REQUIRED)
+	public String addWepToAcc(Long user_id, Long weapon_id) {
+		String query = "Insert into ACCOUNTWEAPON values (?,?)";
+		manager.createNativeQuery(query)
+				.setParameter(1, user_id)
+				.setParameter(2, weapon_id)
+				.executeUpdate();
+		return null;
+	}
 
 	private Account findAccount(Long id) {
 		return manager.find(Account.class, id);
@@ -84,6 +95,5 @@ public class AccountDBRepository implements AccountRepository {
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
-
 
 }
