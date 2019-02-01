@@ -35,9 +35,15 @@ public class AccountServiceImpl implements AccountService {
 	public String amendAccount(Long id, String account) {
 		return repo.amendAccount(id, account);
 	}
+	
+	@Override
+	public String addWepToAcc(Long user_id, Long weapon_id) {
+		return repo.addWepToAcc(user_id, weapon_id);
+	}
 
 	public void setRepo(AccountRepository repo) {
 		this.repo = repo;
 	}
+
 
 }

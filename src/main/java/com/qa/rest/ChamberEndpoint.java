@@ -64,6 +64,13 @@ public class ChamberEndpoint {
 		return aService.amendAccount(id, account);
 	}
 	
+	@Path("/addWepToAcc")
+	@POST
+	@Produces({ "application/json" })
+	String addWepToAcc(Long user_id, Long weapon_id) {
+		return aService.addWepToAcc(user_id, weapon_id);
+	}
+	
 	public void setService(WeaponService service) {
 		this.wService = service;
 	}
