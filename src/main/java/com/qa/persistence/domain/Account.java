@@ -36,11 +36,11 @@ public class Account {
 	public Account() {
 	}
 
-	public Account(String username, String password, String email) {
+	public Account(String username, String password, String email, int cash) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.cash = 3000;
+		this.cash = cash;
 	}
 
 	public int getCash() {
