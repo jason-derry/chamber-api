@@ -1,4 +1,4 @@
-INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
+INSERT INTO ACCOUNT (username, password, email, cash) VALUES ('chadmayr', 'password', 'chadmayr@umail.com', 69000)
 
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('AKM', 'Assault', '7.62mm', 3.6, 25, 2.5, 600, 350, 140, 0.7, 0.2, 900)
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('FAMAS', 'Assault', '5.56mm', 3.8, 30, 2.5, 1000, 450, 95, 0.8, 0.1, 1100)
