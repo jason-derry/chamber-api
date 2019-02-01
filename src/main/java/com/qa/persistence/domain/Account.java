@@ -22,6 +22,7 @@ public class Account {
 	private String username;
 	private String password;
 	private String email;
+	private int cash;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {
 	        CascadeType.PERSIST,
@@ -39,6 +40,15 @@ public class Account {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.cash = 3000;
+	}
+
+	public int getCash() {
+		return cash;
+	}
+
+	public void setCash(int cash) {
+		this.cash = cash;
 	}
 
 	public String getUsername() {
