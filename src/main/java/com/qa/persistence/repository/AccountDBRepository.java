@@ -69,6 +69,7 @@ public class AccountDBRepository implements AccountRepository {
 			accountInDB.setUsername(changes.getUsername());
 			accountInDB.setPassword(changes.getPassword());
 			accountInDB.setEmail(changes.getEmail());
+			accountInDB.setCash(changes.getCash());
 		}
 		return "{\"message\": \"account has been sucessfully amended\"}";
 	}
