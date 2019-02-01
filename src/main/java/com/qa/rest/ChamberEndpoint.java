@@ -67,7 +67,7 @@ public class ChamberEndpoint {
 	@Path("/addWepToAcc")
 	@POST
 	@Produces({ "application/json" })
-	String addWepToAcc(Long user_id, Long weapon_id) {
+	public String addWepToAcc(Long user_id, Long weapon_id) {
 		return aService.addWepToAcc(user_id, weapon_id);
 	}
 	
