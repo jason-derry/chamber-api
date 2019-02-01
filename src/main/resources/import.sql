@@ -1,3 +1,5 @@
+INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
+
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('AKM', 'Assault', '7.62mm', 3.6, 25, 2.5, 600, 350, 140, 0.7, 0.2, 900)
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('FAMAS', 'Assault', '5.56mm', 3.8, 30, 2.5, 1000, 450, 95, 0.8, 0.1, 1100)
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('FN SCAR', 'Assault', '5.56mm', 3.3, 30, 2.1, 625, 500, 110, 0.9, 0.1, 1200)
@@ -33,8 +35,5 @@ INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, da
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('Tommy Gun', 'SMG', '.45 ACP', 4.9, 50, 2.4, 850, 150, 130, 0.65, 0.2, 700)
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('Uzi', 'SMG', '9mm', 3.5, 25, 1.5, 600, 200, 135, 0.8, 0.1, 450)
 INSERT INTO WEAPON (name, type, ammo, weight, magSize, reloadSpd, rof, range, damage, accMod, critMod, price) VALUES ('L2A3', 'SMG', '9mm', 2.7, 34, 1.3, 550, 200, 125, 0.75, 0.15, 650)
-
-
-INSERT INTO ACCOUNT (username, password, email) VALUES ('user1', 'password', 'nightmayr@umail.com')
 
 INSERT INTO ACCOUNTWEAPON (user_id, weapon_id) VALUES (1, 4)

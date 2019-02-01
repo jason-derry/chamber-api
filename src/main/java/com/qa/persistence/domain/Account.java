@@ -3,10 +3,14 @@ package com.qa.persistence.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -19,12 +23,14 @@ public class Account {
 	private String password;
 	private String email;
 	
-	@ManyToMany(mappedBy = "accounts")
-	private Set<Weapon> weapons = new HashSet<>();
-
-	public Set<Weapon> getWeapons() {
-		return weapons;
-	}
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {
+	        CascadeType.PERSIST,
+	        CascadeType.MERGE
+	    })
+	@JoinTable(name = "accountweapon",
+			joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "weapon_id", referencedColumnName = "id"))
+	private Set<Weapon> weapons;
 
 	public Account() {
 	}

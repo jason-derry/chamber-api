@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,12 +33,6 @@ public class Weapon {
 	private Double critMod;
 	private Long price;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "accountweapon",
-			joinColumns = @JoinColumn(name = "weapon_id", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
-	private Set<Account> accounts;
-	
 	public Weapon() {
 	}
 	
@@ -54,8 +49,6 @@ public class Weapon {
 		this.accMod = accMod;
 		this.critMod = critMod;
 		this.price = price;
-//		this.accounts = Stream.of(accounts).collect(Collectors.toSet());
-//		this.accounts.forEach(x -> x.getWeapons().add(this));
 	}
 
 	public String getName() {
