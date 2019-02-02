@@ -1,9 +1,17 @@
 package com.qa.persistence.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Account {
@@ -14,14 +22,33 @@ public class Account {
 	private String username;
 	private String password;
 	private String email;
+	private int cash;
+	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {
+	        CascadeType.PERSIST,
+	        CascadeType.MERGE
+	    })
+	@JoinTable(name = "accountweapon",
+			joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "weapon_id", referencedColumnName = "id"))
+	private Set<Weapon> weapons;
 
 	public Account() {
 	}
 
-	public Account(String username, String password, String email) {
+	public Account(String username, String password, String email, int cash) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.cash = cash;
+	}
+
+	public int getCash() {
+		return cash;
+	}
+
+	public void setCash(int cash) {
+		this.cash = cash;
 	}
 
 	public String getUsername() {

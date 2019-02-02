@@ -11,6 +11,7 @@ public interface AccountService {
 	String deleteAccount(Long id);
 	
 	String amendAccount(Long id, String account);
-
+	
+	String addWepToAcc(Long user_id, Long weapon_id);
 
 }

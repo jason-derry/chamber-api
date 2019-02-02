@@ -1,9 +1,18 @@
 package com.qa.persistence.domain;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Weapon {
@@ -27,7 +36,7 @@ public class Weapon {
 	public Weapon() {
 	}
 	
-	public Weapon(String name, String type, String ammo, Double weight, Integer magSize, Double reloadSpd, Long rof, Long range, Long damage, Double accMod, Double critMod ) {
+	public Weapon(String name, String type, String ammo, Double weight, Integer magSize, Double reloadSpd, Long rof, Long range, Long damage, Double accMod, Double critMod, Long price) {
 		this.name = name;
 		this.type = type;
 		this.ammo = ammo;
