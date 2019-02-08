@@ -82,9 +82,11 @@ public class AccountDBRepository implements AccountRepository {
 	}
 	
 	@Override
+	@Transactional(REQUIRED)
 	public String remWepFromAcc(Long user_id, Long weapon_id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = manager.createNativeQuery("DELETE FROM ACCOUNTWEAPON WHERE user_id = " + user_id + " AND weapon_id = " + weapon_id);
+		query.executeUpdate();
+		return "weapon removed from account " + user_id;
 	}
 
 	private Account findAccount(Long id) {
