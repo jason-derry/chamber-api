@@ -12,11 +12,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import org.apache.log4j.Logger;
-
-import com.qa.business.service.AccountService;
 import com.qa.persistence.domain.Account;
-import com.qa.persistence.domain.Weapon;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
@@ -47,7 +43,7 @@ public class AccountDBRepository implements AccountRepository {
 	public String createAccount(String accout) {
 		Account anAccount = util.getObjectForJSON(accout, Account.class);
 		manager.persist(anAccount);
-		return "{\"message\": \"account has been sucessfully added\"}";
+		return "account sucessfully added";
 	}
 
 	@Override
@@ -57,7 +53,7 @@ public class AccountDBRepository implements AccountRepository {
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 		}
-		return "{\"message\": \"account sucessfully deleted\"}";
+		return "account sucessfully deleted";
 	}
 	
 	@Override
@@ -71,7 +67,7 @@ public class AccountDBRepository implements AccountRepository {
 			accountInDB.setEmail(changes.getEmail());
 			accountInDB.setCash(changes.getCash());
 		}
-		return "{\"message\": \"account has been sucessfully amended\"}";
+		return "accountsucessfully amended";
 	}
 	
 	@Override
@@ -86,9 +82,11 @@ public class AccountDBRepository implements AccountRepository {
 	}
 	
 	@Override
+	@Transactional(REQUIRED)
 	public String remWepFromAcc(Long user_id, Long weapon_id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = manager.createNativeQuery("DELETE FROM ACCOUNTWEAPON WHERE user_id = " + user_id + " AND weapon_id = " + weapon_id);
+		query.executeUpdate();
+		return "weapon removed from account " + user_id;
 	}
 
 	private Account findAccount(Long id) {
