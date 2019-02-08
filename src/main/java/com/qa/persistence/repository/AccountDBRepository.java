@@ -12,11 +12,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import org.apache.log4j.Logger;
-
-import com.qa.business.service.AccountService;
 import com.qa.persistence.domain.Account;
-import com.qa.persistence.domain.Weapon;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
