@@ -84,6 +84,12 @@ public class AccountDBRepository implements AccountRepository {
 				.executeUpdate();
 		return "weapon added to account " + user_id;
 	}
+	
+	@Override
+	public String remWepFromAcc(Long user_id, Long weapon_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	private Account findAccount(Long id) {
 		return manager.find(Account.class, id);

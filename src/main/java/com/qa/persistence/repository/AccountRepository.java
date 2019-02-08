@@ -13,5 +13,7 @@ public interface AccountRepository {
 	String amendAccount(Long id, String account);
 	
 	String addWepToAcc(Long user_id, Long weapon_id);
+	
+	String remWepFromAcc(Long user_id, Long weapon_id);
 
 }

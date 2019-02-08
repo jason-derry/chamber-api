@@ -79,6 +79,13 @@ public class ChamberEndpoint {
 		return aService.addWepToAcc(user_id, weapon_id);
 	}
 	
+	@Path("/remWepFromAcc/{uid}/{wid}")
+	@POST
+	@Produces({ "application/json" })
+	public String remWepFromAcc(@PathParam("uid") Long user_id, @PathParam("wid") Long weapon_id) {
+		return aService.remWepFromAcc(user_id, weapon_id);
+	}
+	
 	public void setService(WeaponService service) {
 		this.wService = service;
 	}

@@ -40,10 +40,14 @@ public class AccountServiceImpl implements AccountService {
 	public String addWepToAcc(Long user_id, Long weapon_id) {
 		return repo.addWepToAcc(user_id, weapon_id);
 	}
+	
+	@Override
+	public String remWepFromAcc(Long user_id, Long weapon_id) {
+		return repo.remWepFromAcc(user_id, weapon_id);
+	}
 
 	public void setRepo(AccountRepository repo) {
 		this.repo = repo;
 	}
-
 
 }
