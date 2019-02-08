@@ -47,7 +47,7 @@ public class AccountDBRepository implements AccountRepository {
 	public String createAccount(String accout) {
 		Account anAccount = util.getObjectForJSON(accout, Account.class);
 		manager.persist(anAccount);
-		return "{\"message\": \"account has been sucessfully added\"}";
+		return "account sucessfully added";
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class AccountDBRepository implements AccountRepository {
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 		}
-		return "{\"message\": \"account sucessfully deleted\"}";
+		return "account sucessfully deleted";
 	}
 	
 	@Override
@@ -71,7 +71,7 @@ public class AccountDBRepository implements AccountRepository {
 			accountInDB.setEmail(changes.getEmail());
 			accountInDB.setCash(changes.getCash());
 		}
-		return "{\"message\": \"account has been sucessfully amended\"}";
+		return "accountsucessfully amended";
 	}
 	
 	@Override
