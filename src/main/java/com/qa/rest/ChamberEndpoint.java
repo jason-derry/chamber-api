@@ -80,7 +80,7 @@ public class ChamberEndpoint {
 	}
 	
 	@Path("/remWepFromAcc/{uid}/{wid}")
-	@POST
+	@DELETE
 	@Produces({ "application/json" })
 	public String remWepFromAcc(@PathParam("uid") Long user_id, @PathParam("wid") Long weapon_id) {
 		return aService.remWepFromAcc(user_id, weapon_id);
